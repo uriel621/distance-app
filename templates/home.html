@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+    {% block body %}
+    <main role="main">
+        <div class="jumbotron">
+            <h1>Distance</h1>
+            <p class="lead">Pick two locations to find out the distance and travel time.</p>
+            <a class="btn btn-lg btn-primary" href="/about" role="button">About</a>
+        </div>
+    </main>
+    <form id="distance_form">
+        <div class="form-group">
+            <label>Origin: </label> 
+            <input class="form-control" id="from_places" placeholder="Enter a location" required /> 
+            <input id="origin" name="origin" required="" type="hidden" />
+        </div>
+            
+        <div class="form-group">
+            <label>Destination: </label> 
+            <input class="form-control" id="to_places" placeholder="Enter a location" required /> 
+            <input id="destination" name="destination" required="" type="hidden" />
+        </div>
+        <input class="btn btn-primary" type="submit" value="Calculate" />
+    </form>
+
+<br />
+    <main role="main" class="">
+            <h2>Locations</h2>
+            <div class="table-responsive">
+              <table class="table table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th>Locations</th>
+                    <th>Distance</th>
+                    <th>Travel Time</th>
+                </tr>
+                </thead>
+                <tbody id="locations"></tbody>
+              </table>
+            </div>
+          </main>
+
+          <script src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyCd_KjCpZJ2F2vBc67F_bsXdHEWZCv6tyk"  type="text/javascript"></script>
+          <script type="text/javascript" src="/static/js/index.js"></script>
+{% endblock %}
